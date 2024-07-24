@@ -1,4 +1,4 @@
-
+import java.util.*;
 public class Easy{
     public static void main(String[] args) {
 
@@ -81,5 +81,52 @@ public class Easy{
         }
         return i+1;
     }
+
+//    Reverse the array
+    public void reverseArray(int arr[],int n){
+        //Take two pointers "FIRST" "LAST"
+//        swap them with each other
+        int first = 0;
+        int last = n-1;
+
+        while(first<last){
+            int temp = arr[first];
+            arr[first] = arr[last];
+            arr[last] = temp;
+            first++;
+            last--;
+        }
+    }
+
+
+//    REVERSE THE ARRAY AFTER M index
+
+    public static void reverseArray(ArrayList<Integer> arr, int m)
+    {
+        // Write your code here.
+        int n = arr.size();
+        int f = m+1;
+        int l = n-1;
+
+        while(f<l){
+            int temp = arr.get(f);
+            arr.set(f, arr.get(l));
+            arr.set(l, temp);
+            f++;
+            l--;
+        }
+    }
+
+
+//    ROTATE ARRAY BY ONE
+public void rotate(int[] arr) {
+    // code here
+    int n = arr.length;
+    int temp = arr[n-1];
+    for(int i = n-2 ; i >= 0 ;i--){
+        arr[i+1] = arr[i];
+    }
+    arr[0] = temp;
+}
 
 }
