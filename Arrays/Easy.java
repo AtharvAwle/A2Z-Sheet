@@ -129,4 +129,42 @@ public void rotate(int[] arr) {
     arr[0] = temp;
 }
 
+//MISSING NUMBER
+public static int missingNumber(int []a, int N) {
+    // Write your code here.
+    int n = a.length;
+    int sum = n*(n+1)/2;
+    int addArray = 0;
+
+    for(int i = 0 ; i < N ; i++){
+        addArray = addArray + a[i];
+    }
+    int result = sum - addArray;
+    return result;
+
+}
+
+
+//MAX NUMBER OF CONSECUTIVE ONCE IN ARRAYS
+public static int consecutiveOnes(int n, int[] arr) {
+    // Write your code here.
+    int count = 0;
+    int max = 0;
+
+    for(int i = 0 ; i < n ; i++){
+        if(arr[i] == 0){
+            count = 0;
+        }else if(arr[i]==1){
+            count++;
+            if(count > max){
+                max = count;
+            }
+
+        }
+    }
+    return max;
+
+}
+
+
 }
