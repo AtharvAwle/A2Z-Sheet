@@ -1,0 +1,57 @@
+This is the basic algorithm for the binary search.
+-->Binary Search
+
+
+It is a popular algorithm used for searching elements in a sorted list or array efficiently.
+It follows a divide-and-conquer approach to repeatedly divide the search space in half until the
+target element is found or determined to be absent.
+
+
+
+-->Algorithm Steps
+
+
+Binary search can be described using the following steps:
+
+
+1-nitialize: Set the lower bound (low) to the first index of the array and the upper bound (high) to the last index.
+2-Find the middle: Calculate the middle index as (low + high) / 2.
+3-Compare: Compare the target element with the element at the middle index.
+           If they are equal, the element is found, and the search ends
+           If the target element is less than the middle element, update high to be middle - 1 and go to step 2.
+           If the target element is greater than the middle element, update low to be middle + 1 and go to step 2.
+4-Repeat: Repeat steps 2-3 until the target element is found or low becomes greater than high.
+5-Result: If the target element is found, return its index; otherwise,
+          return a specified value indicating it is not present in the array.
+
+Pre-conditions
+
+
+Before applying binary search, certain pre-conditions should be met:
+
+
+The array must be sorted in ascending or descending order.
+The array should be random-access, allowing for direct access to elements by index.
+The array's length or size must be known.
+
+
+Advantages
+
+
+Binary search offers several advantages:
+
+
+It has a time complexity of O(log n), making it efficient for large arrays.
+It eliminates half of the remaining search space with each comparison, leading to faster searches.
+It is a simple and widely used algorithm with numerous applications.
+
+
+Limitations
+
+
+Binary search has a few limitations:
+
+
+The array must be sorted, which may require additional processing time or memory.
+Inserting or deleting elements in the array might require re-sorting, which can be costly.
+It may not be applicable for unsorted or dynamically changing arrays.
