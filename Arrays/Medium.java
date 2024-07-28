@@ -26,4 +26,29 @@ public static long maxSubarraySum(int[] arr, int n) {
     }
     return ms;
 }
+
+
+
+      //TRAPPED RAINWATER
+      public static long getTrappedWater(long []arr, int n) {
+          // Write your code here.
+          long[] leftMax = new long[n];
+          leftMax[0]=arr[0];
+          for(int i = 1 ; i < n ; i++){
+              leftMax[i] = Math.max(arr[i], leftMax[i-1]);
+          }
+
+          long[] rightMax = new long[n];
+          rightMax[n-1] = arr[n-1];
+          for(int i = n-2 ; i >= 0; i--){
+              rightMax[i] = Math.max(arr[i], rightMax[i+1]);
+          }
+
+          long trapped = 0;
+          for(int i = 0 ; i < n ; i++){
+              long wl = Math.min(leftMax[i] , rightMax[i]);
+              trapped = trapped + (wl - arr[i]);
+          }
+          return trapped;
+      }
 }
