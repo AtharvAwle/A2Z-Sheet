@@ -1,3 +1,5 @@
+import java.util.*;
+
 public class Medium {
     public static void main(String[] args) {
         int[] arr = {1,2,3,4,5};
@@ -50,5 +52,49 @@ public static long maxSubarraySum(int[] arr, int n) {
               trapped = trapped + (wl - arr[i]);
           }
           return trapped;
+      }
+
+      //rearrange the number positive negative -VARIETY 1
+      public int[] rearrangeArray(int[] nums) {
+          int n = nums.length;
+          int[] ans = new int[n];
+          int pos = 0;
+          int neg = 1;
+
+          for(int i = 0 ; i < n ; i++){
+              //agar positive num hai to ans arr ke positive index mai put karke index +2 for getting aur ek positive.
+              if(nums[i] > 0){
+                  ans[pos] = nums[i];
+                  pos += 2;
+                  //for negativr same approach
+                  //kkarun neg cha ans index +2.
+              } else{
+                  ans[neg] = nums[i];
+                  neg += 2;
+              }
+          }
+          return ans;
+      }
+
+
+
+      //Leaders in an element
+      public static List< Integer > superiorElements(int []a) {
+          // Write your code here.
+          List<Integer> list = new ArrayList<>();
+
+          list.add(a[a.length-1]);
+
+          for(int i=a.length-2; i>=0; i--){
+
+              if(a[i]>a[i+1] && a[i]>list.get(list.size()-1)){
+
+                  list.add(a[i]);
+
+              }
+
+          }
+
+          return list;
       }
 }
