@@ -149,6 +149,30 @@ public static long maxSubarraySum(int[] arr, int n) {
       }
 
 
+      //Sort zero and once
+      public static void sortZeroesAndOne(int[] arr) {
+          //Your code goes here
+          int n = arr.length;
+          int zero = 0;
+          int one = 0;
+
+          for(int i = 0 ; i < n ; i++){
+              if(arr[i] == 0){
+                  zero++;
+              }else{
+                  one++;
+              }
+          }
+
+          for(int i = 0 ; i <zero ; i++){
+              arr[i] = 0;
+          }
+          for(int i = zero ; i < arr.length ; i++){
+              arr[i] = 1;
+          }
+      }
+
+
 
 
 
