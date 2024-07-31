@@ -97,4 +97,59 @@ public static long maxSubarraySum(int[] arr, int n) {
 
           return list;
       }
+
+
+
+      //spiral matrix que
+      public static void spiralPrint(int matrix[][]){
+          if (matrix == null || matrix.length == 0 || matrix[0].length == 0) {
+              return;
+          }
+          //Your code goes here
+          int n = matrix.length;
+          int m = matrix[0].length;
+
+          int startR = 0;
+          int startC = 0;
+          int endR = n-1;
+          int endC = m-1;
+          while(startR <= endR && startC <= endC){
+              //top
+              for(int j = startC ;j <= endC ; j++ ){
+                  System.out.print(matrix[startR][j]+ " ");
+              }
+              startR++;
+
+              //right
+              for(int i = startR ; i <= endR ; i++){
+                  System.out.print(matrix[i][endC]+ " ");
+              }
+              endC--;
+
+              //bottom
+              if(startR <= endR){
+                  for(int j = endC ; j>=startC ; j--){
+
+                      System.out.print(matrix[endR][j]+ " ");
+                  }
+                  endR--;
+              }
+
+              //left
+              if(startC <= endC){
+                  for(int i = endR ; i >= startR ; i--){
+
+                      System.out.print(matrix[i][startC]+ " ");
+                  }
+                  startC++;
+              }
+
+          }
+          System.out.println();
+      }
+
+
+
+
+
 }
