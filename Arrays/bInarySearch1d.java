@@ -23,4 +23,18 @@ public class bInarySearch1d {
 
         return -1;
     }
+    public static boolean binarySearchRecc(int[] arr , int start , int end,int target ){
+        int mid = start+end/2;
+        while (start <= end){
+            if(arr[mid] != target){
+                return false;
+            } else if (arr[mid]  > target) {
+                binarySearchRecc(arr,start,mid-1,target);
+            }else {
+                binarySearchRecc(arr,mid+1,end,target)
+                }
+            }
+        return true;
+        }
+    }
 }
